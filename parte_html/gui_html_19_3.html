@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Gestione Archivio Libri</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+        header {
+            background: linear-gradient(135deg, #4CAF50, #2E8B57);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f0f0f0;
+        }
+        main {
+            flex: 1;
+            padding: 40px;
+            transition: padding 0.3s ease;
+        }
+        section {
+            padding: 20px;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            transition: all 0.3s ease;
+        }
+        #home {
+            display: block;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px 20px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        form button {
+            width: 100%;
+            background-color: #28a745;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+            display: none;
+            transition: all 0.3s ease;
+        }
+        footer p {
+            margin: 0;
+        }
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <button onclick="showSection('home')">home</button>
+                <button onclick="showSection('features')">Caratteristiche</button>
+                <button onclick="showSection('utility')">contattaci</button>
+                <button onclick="showSection('program')">programma</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Benvenuti mio software di gestione di una biblioteca</h1>
+            <p>Questo software aiuta a gestire in modo efficiente un archivio di libri.</p>
+            <img src="libri.png" alt="Logo del Software" style="max-width: 100%; height: auto;">
+            <p>Fai clic sul pulsante qui sotto per scaricare la cartella zippata con il programma java.</p>
+            <a href="..\parte_java.zip" download>
+                <button>Scarica ZIP</button> 
+            </a>
+        </section>
+
+        <section id="features">
+            <h2>Caratteristiche</h2>
+            <table>
+                <tr>
+                    <th>Funzionalità</th>
+                    <th>Descrizione</th>
+                </tr>
+                <tr>
+                    <td>aggiunta</td>
+                    <td>Permette di aggiungere un libro, con relativi parametri.</td>
+                </tr>
+                <tr>
+                    <td>Ricerca</td>
+                    <td>Funzione di ricerca avanzata per trovare libri rapidamente tramite ricerca per titolo.</td>
+                </tr>
+                <tr>
+                    <td>eliminazione</td>
+                    <td>permette di eliminare un libro.</td>
+                </tr>
+                <tr>
+                    <td>modifica</td>
+                    <td>permette di modificare un libro richiedendo i parametri per aggiungerne un altro.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section id="program">
+            <h2>programma</h2>
+            <table>
+                <tr>
+                    <th>screen</th>
+                    <th>Descrizione</th>
+                </tr>
+                <tr>
+                    <td>premessa e tecniche utilizzate</td>
+                    <td>Il programma è stato realizzando usando le librerie grafiche di java come awt e swing.</td>
+                </tr>
+                <tr>
+                    <td><img src="s1.PNG"  alt="archioviolibriapp"></td>
+                    <td>Questo programma, ArchivioLibriApp, è un'applicazione grafica progettata per gestire un archivio di libri. L'utente deve autenticarsi tramite un sistema di login e, se l'accesso riesce, può visualizzare i libri memorizzati in un file. L'interfaccia permette di aggiungere nuovi libri, modificarne i dati cercandoli per titolo, filtrare i libri per genere e eliminarli. Ogni modifica viene aggiornata sia nell'interfaccia che nel file di archiviazione. Il tutto è gestito tramite pulsanti e finestre di dialogo, offrendo un'esperienza intuitiva e pratica grazie alla libreria Swing.</td>
+                </tr>
+                <tr>
+                    <td><img src="s2.PNG" alt="dialogutils"></td>
+                    <td>Questo programma DialogUtils fornisce un'interfaccia grafica per consentire agli utenti di inserire i dati di un libro, come il titolo, l'autore, la casa editrice, la data di uscita e il genere, in un formato guidato e intuitivo. Utilizzando Swing, mostra una finestra di dialogo con campi da compilare e una lista a discesa per il genere. Se i dati vengono inseriti correttamente, crea un'istanza di un oggetto Libro; in caso di errori, come campi vuoti o una data in formato errato, avvisa l'utente con messaggi chiari.</td>
+                </tr>
+                <tr>
+                    <td><img src="s3.PNG" alt="fileutils"></td>
+                    <td>La classe FileUtils è responsabile della gestione dei dati relativi ai libri, consentendo di leggerli e scriverli in un file di testo denominato libri.txt. Il metodo leggiLibriDaFile legge ogni riga del file, suddivide i campi separati da punto e virgola e crea oggetti Libro con i dati estratti. In caso di errori di lettura, la classe evita interruzioni critiche. Il metodo scriviLibriSuFile, invece, salva i dati dei libri nel file, formattandoli correttamente e separando i campi con punto e virgola. In caso di errori, notifica l'utente tramite messaggi d'errore. In sintesi, questa classe sincronizza l'archivio dei libri in memoria con un file di salvataggio, garantendo la persistenza dei dati.</td>
+                </tr>
+                <tr>
+                    <td><img src="s4.PNG" alt="libro.java"></td>
+                    <td>La classe Libro rappresenta un modello per gestire i dati di un libro in un archivio. Contiene attributi quali titolo, autore, casa editrice, data di uscita e genere, con metodi getter per accedere a questi dati. Il costruttore permette di inizializzare i valori, mentre il metodo toString</td>
+                </tr>
+                <tr>
+                    <td><img src="s5.PNG" alt="loginutils"></td>
+                    <td>La classe LoginUtils gestisce un sistema di autenticazione semplice basato su un username e una password predefiniti ("admin" e "password"). L'utente ha un massimo di tre tentativi per inserire correttamente le credenziali tramite finestre di dialogo. In caso di errore, viene mostrato un messaggio d'avviso. Se le credenziali corrette vengono fornite entro i tentativi disponibili, l'accesso è consentito; altrimenti, l'autenticazione fallisce. In breve, questa classe verifica l'identità dell'utente in modo essenziale ed efficace.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <video src="2025-03-24 12-03-37.mkv" type="video/mp4" controls></video></td>
+                    <td>video che mostra il codice nella sua interezza</td>
+                </tr>
+            </table>
+        </section>
+        <style>
+         #program img {
+            max-width: 100%;
+            height: auto;
+            max-height: 5000px; 
+            display: block;
+            margin: 0 auto; 
+        }
+        </style>
+        <style>
+            #program video {
+                max-width: 100%;
+                height: auto;
+                max-height: 5000px; 
+                display: block;
+                margin: 0 auto; 
+            }
+        </style>
+        
+        <section id="utility">
+            <h2>contattaci</h2>
+            <p>Per qualsiasi domanda o supporto, compila il modulo qui sotto.</p>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Messaggio:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Invia</button>
+            </form>
+        </section>
+
+        <section id="download">
+            <h2>Scarica il Software</h2>
+            <p>Segui le istruzioni per scaricare e installare il software.</p>
+            <button>Download</button>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Software sviluppato da Gabriele Zaccarelli | Email: <a href="mailto:zaccarelli.gabriele@gmail.com">zaccarelli.gabriele@gmail.com</a></p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            
+            if (sectionId === 'utility') {
+                document.getElementById('footer').style.display = 'block';
+            } else {
+                document.getElementById('footer').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
